@@ -2,6 +2,7 @@ package com.admin.tafmetar.model;
 
 import com.admin.tafmetar.Enum.TargetType;
 import com.admin.tafmetar.shared.BusinessException;
+import com.admin.tafmetar.utils.DateTimeUtils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,6 +17,7 @@ public class TafMetarAerodromeService {
     private String urlTaf = "&msg=metar&data_ini=";
     private String urlMetar = "&msg=taf&data_ini=";
     private String urlAerodromeInfo = "&msg=aviso_aerodromo&data_ini=";
+    private String endDate = "&data_fim=";
 
     private List<TargetType> targetList;
     private String locale;
@@ -45,6 +47,10 @@ public class TafMetarAerodromeService {
             if (target == TargetType.AERODROME) {
                 urlBuilder.append(urlAerodromeInfo);
             }
+            DateTimeUtils now = new DateTimeUtils();
+            urlBuilder.append(now.getFormatedDate());
+            urlBuilder.append(endDate);
+            urlBuilder.append(now.getFormatedDate());
         }
         return urlBuilder.toString();
     }
