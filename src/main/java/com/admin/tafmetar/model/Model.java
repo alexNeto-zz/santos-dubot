@@ -1,8 +1,10 @@
 package com.admin.tafmetar.model;
 
+import com.admin.tafmetar.Enum.TargetType;
 import com.admin.tafmetar.view.Observer;
 import com.pengrad.telegrambot.model.Update;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,7 +38,13 @@ public class Model implements Subject {
 
     public void searchTafMetar(Update update) {
         String response = null;
-
+        List<TargetType> targetTypeList = new ArrayList<>();
+        targetTypeList.add(TargetType.AERODROME);
+        targetTypeList.add(TargetType.TAF);
+        targetTypeList.add(TargetType.METAR);
+        TafMetarAerodromeService tma = new TafMetarAerodromeService("Sbsj");
+        tma.setTargetList(targetTypeList);
+        response = tma.getResponse().toString();
         if (response != null) {
             this.notifyObservers(update.message().chat().id(), response);
         } else {

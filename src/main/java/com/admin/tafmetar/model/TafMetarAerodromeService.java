@@ -27,32 +27,32 @@ public class TafMetarAerodromeService {
     }
 
     public String buildUrl(TargetType target) {
-        StringBuffer urlBuilder = new StringBuffer();
-        urlBuilder.append(this.protocol);
-        urlBuilder.append(this.urlStem);
+        StringBuffer urlBuffer = new StringBuffer();
+        urlBuffer.append(this.protocol);
+        urlBuffer.append(this.urlStem);
         if (this.locale == null || this.locale.isEmpty()) {
             throw new BusinessException("O local está vazio"); // TODO - adicionar I18N
         } else {
-            urlBuilder.append(locale);
+            urlBuffer.append(locale);
         }
         if (target == null) {
             throw new BusinessException("O modo desejado deve ser informado"); // TODO - adicionar I18N
         } else {
             if (target == TargetType.TAF) {
-                urlBuilder.append(urlTaf);
+                urlBuffer.append(urlTaf);
             }
             if (target == TargetType.METAR) {
-                urlBuilder.append(urlMetar);
+                urlBuffer.append(urlMetar);
             }
             if (target == TargetType.AERODROME) {
-                urlBuilder.append(urlAerodromeInfo);
+                urlBuffer.append(urlAerodromeInfo);
             }
             DateTimeUtils now = new DateTimeUtils();
-            urlBuilder.append(now.getFormatedDate());
-            urlBuilder.append(endDate);
-            urlBuilder.append(now.getFormatedDate());
+            urlBuffer.append(now.getFormatedDate());
+            urlBuffer.append(endDate);
+            urlBuffer.append(now.getFormatedDate());
         }
-        return urlBuilder.toString();
+        return urlBuffer.toString();
     }
 
     public List<String> getResponse() {
