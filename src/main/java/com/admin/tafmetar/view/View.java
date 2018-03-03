@@ -17,10 +17,9 @@ import java.util.List;
 
 public class View implements Observer, Info {
 
-    TelegramBot bot = new TelegramBot(token);
-    GetUpdatesResponse updatesResponse;
-    SendResponse sendResponse;
-    BaseResponse baseResponse;
+    private TelegramBot bot = new TelegramBot(token);
+    private SendResponse sendResponse;
+    private BaseResponse baseResponse;
 
     int queuesIndex = 0;
 
@@ -38,23 +37,20 @@ public class View implements Observer, Info {
 
     public void receiveUsersMessages() {
 
+        GetUpdatesResponse updatesResponse;
+
         while (true) {
-
             updatesResponse = bot.execute(new GetUpdates().limit(100).offset(queuesIndex));
-
             List<Update> updates = updatesResponse.updates();
+            setControllerSearch(new AerodromeController(model, this));
+            //sendResponse = bot.execute(new SendMessage(update.message().chat().id(), "It's alive!"));
 
             for (Update update : updates) {
-
                 queuesIndex = update.updateId() + 1;
-
-                setControllerSearch(new AerodromeController(model, this));
-                sendResponse = bot.execute(new SendMessage(update.message().chat().id(), "It's alive!"));
+                this.callController(update);
             }
-
         }
     }
-
 
     public void callController(Update update) {
         this.controllerSearch.search(update);
