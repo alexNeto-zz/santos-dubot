@@ -1,11 +1,15 @@
 language: java
+sudo: false
 
-os:
-  - linux
+jdk:
+  - oraclejdk8
+  - openjdk8
 
-branches:
-  only:
-    - master
+sudo: required
+
+env:
+  matrix:
+- TERM=dumb
 
 before_install:
   - echo "package com.admin.tafmetar.view;
