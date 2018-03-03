@@ -1,6 +1,6 @@
 package com.admin.tafmetar.model;
 
-import com.admin.tafmetar.Enum.TargetType;
+import com.admin.tafmetar.enumerate.TargetType;
 import com.admin.tafmetar.view.Observer;
 import com.pengrad.telegrambot.model.Update;
 

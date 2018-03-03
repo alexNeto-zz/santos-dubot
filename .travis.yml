@@ -5,12 +5,6 @@ jdk:
   - oraclejdk8
   - openjdk8
 
-sudo: required
-
-env:
-  matrix:
-- TERM=dumb
-
 before_install:
   - echo "package com.admin.tafmetar.view;
             public interface Info {

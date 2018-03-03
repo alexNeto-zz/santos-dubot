@@ -1,13 +1,15 @@
 package com.admin.tafmetar.utils;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class DateTimeUtils {
 
-    Calendar now;
+    private Calendar now;
 
     public DateTimeUtils() {
-        this.now = Calendar.getInstance();
+        this.now = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        System.out.println(now);
     }
 
     public String getFormatedDate() {
@@ -15,7 +17,7 @@ public class DateTimeUtils {
         dateBuffer.append(now.YEAR);
         dateBuffer.append(now.MONTH);
         dateBuffer.append(now.DAY_OF_MONTH);
-        dateBuffer.append(now.HOUR);
+        dateBuffer.append(now.HOUR_OF_DAY);
         return dateBuffer.toString();
     }
 }

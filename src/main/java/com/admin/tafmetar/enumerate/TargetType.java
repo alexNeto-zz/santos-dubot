@@ -1,4 +1,4 @@
-package com.admin.tafmetar.Enum;
+package com.admin.tafmetar.enumerate;
 
 public enum TargetType {
     TAF(1),
