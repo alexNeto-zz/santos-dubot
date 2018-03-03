@@ -8,4 +8,5 @@ branches:
     - master
 
 script:
-   - ./gradle serve
+  - ./gradlew assemble
+  - ./gradlew serve
