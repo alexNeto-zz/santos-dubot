@@ -7,6 +7,10 @@ branches:
   only:
     - master
 
+before_install:
+  - echo "package com.admin.tafmetar.view;
+            public interface Info {
+              String token = "no token for you, next!";
+            }" > src/main/java/com/admin/tafmetar/view/Info.java
 script:
   - ./gradlew assemble
-  - ./gradlew serve
