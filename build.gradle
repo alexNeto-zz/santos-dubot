@@ -25,6 +25,31 @@ dependencies {
     compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
 }
 
+
+
+ext.sharedManifest = manifest {
+    attributes(
+            'Main-Class': mainClassName,
+            "Implementation-Title": "santus-dubot",
+            "Implementation-Version": version)
+}
+
+task jarMaker(type: Jar) {
+    manifest = project.manifest {
+        from sharedManifest
+    }
+}
+
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': mainClassName,
+                "Implementation-Title": "santus-dubot",
+                "Implementation-Version": version)
+    }
+}
+
 task serve(type: JavaExec) {
     classpath sourceSets.main.runtimeClasspath
     main = mainClassName
