@@ -12,13 +12,6 @@ import java.util.List;
 
 public class TafMetarAerodromeService {
 
-    private String protocol = "http://";
-    private String urlStem = "www.redemet.aer.mil.br/api/consulta_automatica/index.php?local=";
-    private String urlTaf = "&msg=metar&data_ini=";
-    private String urlMetar = "&msg=taf&data_ini=";
-    private String urlAerodromeInfo = "&msg=aviso_aerodromo&data_ini=";
-    private String endDate = "&data_fim=";
-
     private List<TargetType> targetList;
     private String locale;
 
@@ -26,10 +19,17 @@ public class TafMetarAerodromeService {
         this.locale = locale;
     }
 
-    public String buildUrl(TargetType target) {
+    public String buildUrl(TargetType target) throws BusinessException {
+        String protocol = "http://";
+        String urlStem = "www.redemet.aer.mil.br/api/consulta_automatica/index.php?local=";
+        String urlTaf = "&msg=metar&data_ini=";
+        String urlMetar = "&msg=taf&data_ini=";
+        String urlAerodromeInfo = "&msg=aviso_aerodromo&data_ini=";
+        String endDate = "&data_fim=";
+
         StringBuffer urlBuffer = new StringBuffer();
-        urlBuffer.append(this.protocol);
-        urlBuffer.append(this.urlStem);
+        urlBuffer.append(protocol);
+        urlBuffer.append(urlStem);
         if (this.locale == null || this.locale.isEmpty()) {
             throw new BusinessException("O local está vazio"); // TODO - adicionar I18N
         } else {
@@ -55,7 +55,7 @@ public class TafMetarAerodromeService {
         return urlBuffer.toString();
     }
 
-    public List<String> getResponse() {
+    public List<String> getResponse() throws BusinessException {
         String url;
         List<String> response = new ArrayList<>();
         for (TargetType target : targetList) {
@@ -65,7 +65,7 @@ public class TafMetarAerodromeService {
         return response;
     }
 
-    public String makeRequest(String urlStr) {
+    public String makeRequest(String urlStr) throws BusinessException {
         String partialResponse;
         BufferedReader reader = null;
         try {

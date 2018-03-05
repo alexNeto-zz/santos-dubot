@@ -9,7 +9,6 @@ public class DateTimeUtils {
 
     public DateTimeUtils() {
         this.now = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        System.out.println(now);
     }
 
     public String getFormatedDate() {

@@ -53,10 +53,14 @@ public class View implements Observer, Info {
     }
 
     public void callController(Update update) {
+        if (update.message().text().startsWith("/local")){
+            this.controllerSearch.search(update);
+        }
         this.controllerSearch.search(update);
     }
 
     public void update(long chatId, String studentsData) {
+
         sendResponse = bot.execute(new SendMessage(chatId, studentsData));
     }
 
