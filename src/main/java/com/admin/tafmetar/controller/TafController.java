@@ -17,6 +17,6 @@ public class TafController implements ControllerInterface {
     @Override
     public void search(Update update) {
         view.sendTypingMessage(update);
-        model.searchTafMetar(update);
+        model.searchTaf(update);
     }
 }

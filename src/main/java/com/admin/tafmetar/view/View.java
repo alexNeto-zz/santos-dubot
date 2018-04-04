@@ -1,8 +1,6 @@
 package com.admin.tafmetar.view;
 
-import com.admin.tafmetar.controller.AerodromeController;
-import com.admin.tafmetar.controller.ControllerInterface;
-import com.admin.tafmetar.controller.TafController;
+import com.admin.tafmetar.controller.*;
 import com.admin.tafmetar.enumerate.TargetType;
 import com.admin.tafmetar.model.Model;
 import com.pengrad.telegrambot.Callback;
@@ -66,42 +64,38 @@ public class View implements Observer, Info {
         for (Update update : updates) {
             queuesIndex = update.updateId() + 1;
             if (update.callbackQuery() != null) {
-                if (update.callbackQuery().data() == "callback_aerodrome") {
+                if (update.callbackQuery().data().equals("callback_aerodrome")) {
                     setControllerSearch(new AerodromeController(model, this));
                 }
-                if (update.callbackQuery().data() == "callback_taf") {
+                if (update.callbackQuery().data().equals("callback_taf")) {
                     setControllerSearch(new TafController(model, this));
                 }
-                if (update.callbackQuery().data() == "callback_metar") {
-
+                if (update.callbackQuery().data().equals("callback_metar")) {
+                    setControllerSearch(new MetarController(model, this));
                 }
-                if (update.callbackQuery().data() == "callback_all") {
-
+                if (update.callbackQuery().data().equals("callback_all")) {
+                    setControllerSearch(new TafMetarAerodromeController(model, this));
                 }
-//                System.out.println(update.callbackQuery().data());
-//                bot.execute(new SendMessage(update.callbackQuery().message().chat().id(),
-//                        update.callbackQuery().message().text()));
+                this.callController(update);
             }
             if (update.message() == null || StringUtils.isEmpty(update.message().text())) {
                 continue;
             }
             if (update.message().text().toLowerCase().startsWith("sb")) {
-                bot.execute(new SendMessage(update.message().chat().id(), "Inserindo keyboard inline")
+                bot.execute(new SendMessage(update.message().chat().id(), "Escolha uma das opções")
                         .replyMarkup(inlineKeyboard));
+                model.setLocale(update.message().text().toLowerCase());
             }
-
-//            this.callController(update);
         }
     }
 
 
     public void callController(Update update) {
-        // bot.execute(new SendMessage(update.message().chat().id(), "It's alive!"));
         this.controllerSearch.search(update);
     }
 
-    public void update(long chatId, String studentsData) {
-        bot.execute(new SendMessage(chatId, studentsData));
+    public void update(long chatId, String receivedData) {
+        bot.execute(new SendMessage(chatId, receivedData));
     }
 
     public void setControllerSearch(ControllerInterface controllerSearch) { //Strategy Pattern
