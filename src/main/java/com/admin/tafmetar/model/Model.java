@@ -40,7 +40,7 @@ public class Model implements Subject {
     }
 
     public void searchTafMetar(Update update) {
-        String response = null;
+        String response;
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.AERODROME);
         targetTypeList.add(TargetType.TAF);

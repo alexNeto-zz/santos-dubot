@@ -66,12 +66,12 @@ public class TafMetarAerodromeService {
     }
 
     public String makeRequest(String urlStr) throws BusinessException {
-        String partialResponse;
+        String partialResponse = "outro algo";
         BufferedReader reader = null;
         try {
-            URL url = new URL(urlStr);
-            reader = new BufferedReader(new InputStreamReader(url.openStream()));
-            partialResponse = reader.readLine();
+         //   URL url = new URL(urlStr);
+         //   reader = new BufferedReader(new InputStreamReader(url.openStream()));
+          //  partialResponse = reader.readLine();
         } catch (Exception e) {
             throw new BusinessException("Não conseguimos acessar os dados desejados, tente novamente"); // TODO - adicionar I18N
         } finally {
