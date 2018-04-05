@@ -40,65 +40,33 @@ public class Model implements Subject {
     }
 
     public void searchTaf(Update update) {
-        String response;
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.TAF);
-        try {
-            TafMetarAerodromeService tma = new TafMetarAerodromeService(this.locale);
-            tma.setTargetList(targetTypeList);
-            response = tma.getResponse().toString();
-        } catch (BusinessException e) {
-            response = e.getMessage();
-        }
-        if (response != null) {
-            this.notifyObservers(update.message().chat().id(), response);
-        } else {
-            this.notifyObservers(update.message().chat().id(), "Informações não incontradas");
-        }
+        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
     }
 
     public void searchMetar(Update update) {
-        String response;
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.METAR);
-        try {
-            TafMetarAerodromeService tma = new TafMetarAerodromeService(this.locale);
-            tma.setTargetList(targetTypeList);
-            response = tma.getResponse().toString();
-        } catch (BusinessException e) {
-            response = e.getMessage();
-        }
-        if (response != null) {
-            this.notifyObservers(update.message().chat().id(), response);
-        } else {
-            this.notifyObservers(update.message().chat().id(), "Informações não incontradas");
-        }
+        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
     }
 
     public void searchAerodrome(Update update) {
-        String response;
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.AERODROME);
-        try {
-            TafMetarAerodromeService tma = new TafMetarAerodromeService(this.locale);
-            tma.setTargetList(targetTypeList);
-            response = tma.getResponse().toString();
-        } catch (BusinessException e) {
-            response = e.getMessage();
-        }
-        if (response != null) {
-            this.notifyObservers(update.message().chat().id(), response);
-        } else {
-            this.notifyObservers(update.message().chat().id(), "Informações não incontradas");
-        }
+        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
     }
 
     public void searchTafMetarAerodrome(Update update) {
-        String response;
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.AERODROME);
         targetTypeList.add(TargetType.TAF);
         targetTypeList.add(TargetType.METAR);
+        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
+    }
+
+    public String callTafMetarAerodromeService(List<TargetType> targetTypeList) {
+        String response;
         try {
             TafMetarAerodromeService tma = new TafMetarAerodromeService(this.locale);
             tma.setTargetList(targetTypeList);
@@ -106,15 +74,26 @@ public class Model implements Subject {
         } catch (BusinessException e) {
             response = e.getMessage();
         }
-        if (response != null) {
-            this.notifyObservers(update.callbackQuery().message().chat().id(), response);
+        return response;
+    }
+
+    public void sendResponse(Update update, String message) {
+        if (update != null) {
+            if (update.callbackQuery() != null) {
+                this.notifyObservers(update.callbackQuery().message().chat().id(), message);
+            } else if (update.message() != null) {
+                this.notifyObservers(update.message().chat().id(), message);
+            } else {
+                // não deveria chegar
+            }
         } else {
-            this.notifyObservers(update.callbackQuery().message().chat().id(), "Informações não incontradas");
+            // se chegou aqui, tá tudo errado
         }
     }
 
     public void setLocale(String locale) {
         this.locale = locale;
+        System.out.println(this.locale);
     }
 }
 

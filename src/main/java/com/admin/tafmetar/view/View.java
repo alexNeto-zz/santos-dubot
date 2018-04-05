@@ -89,7 +89,6 @@ public class View implements Observer, Info {
         }
     }
 
-
     public void callController(Update update) {
         this.controllerSearch.search(update);
     }
@@ -103,6 +102,11 @@ public class View implements Observer, Info {
     }
 
     public void sendTypingMessage(Update update) {
-        bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+        if (update.callbackQuery() != null) {
+            bot.execute(new SendChatAction(update.callbackQuery().message().chat().id(), ChatAction.typing.name()));
+        } else if (update.message() != null) {
+            bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+        }
+
     }
 }
