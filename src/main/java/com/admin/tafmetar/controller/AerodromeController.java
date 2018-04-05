@@ -10,8 +10,8 @@ public class AerodromeController implements ControllerInterface {
     private View view;
 
     public AerodromeController(Model model, View view){
-        this.model = model; //connection Controller -> Model
-        this.view = view; //connection Controller -> View
+        this.model = model;
+        this.view = view;
     }
 
     @Override

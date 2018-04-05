@@ -20,11 +20,7 @@ public class View implements Observer, Info {
 
     private TelegramBot bot = new TelegramBot(token);
     private Integer offSet = 0;
-
-    int queuesIndex = 0;
-
-    ControllerInterface controllerSearch;
-
+    private ControllerInterface controllerSearch;
     private Model model;
 
     public View(Model model) {
@@ -58,7 +54,6 @@ public class View implements Observer, Info {
                 });
 
         for (Update update : updates) {
-            queuesIndex = update.updateId() + 1;
             if (update.callbackQuery() != null) {
                 if (update.callbackQuery().data().equals("callback_aerodrome")) {
                     setControllerSearch(new AerodromeController(model, this));

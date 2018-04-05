@@ -22,8 +22,8 @@ public class TafMetarAerodromeService {
     public String buildUrl(TargetType target) throws BusinessException {
         String protocol = "http://";
         String urlStem = "www.redemet.aer.mil.br/api/consulta_automatica/index.php?local=";
-        String urlTaf = "&msg=metar&data_ini=";
-        String urlMetar = "&msg=taf&data_ini=";
+        String urlTaf = "&msg=taf&data_ini=";
+        String urlMetar = "&msg=metar&data_ini=";
         String urlAerodromeInfo = "&msg=aviso_aerodromo&data_ini=";
         String endDate = "&data_fim=";
 
@@ -66,7 +66,7 @@ public class TafMetarAerodromeService {
     }
 
     public String makeRequest(String urlStr) throws BusinessException {
-        String partialResponse = "outro algo";
+        String partialResponse;
         BufferedReader reader = null;
         try {
             URL url = new URL(urlStr);

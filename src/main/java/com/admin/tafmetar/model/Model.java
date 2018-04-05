@@ -81,11 +81,7 @@ public class Model implements Subject {
                 this.notifyObservers(update.callbackQuery().message().chat().id(), message);
             } else if (update.message() != null) {
                 this.notifyObservers(update.message().chat().id(), message);
-            } else {
-                // não deveria chegar
             }
-        } else {
-            // se chegou aqui, tá tudo errado
         }
     }
 
