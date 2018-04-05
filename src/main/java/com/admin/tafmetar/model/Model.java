@@ -4,8 +4,6 @@ import com.admin.tafmetar.enumerate.TargetType;
 import com.admin.tafmetar.shared.BusinessException;
 import com.admin.tafmetar.view.Observer;
 import com.pengrad.telegrambot.model.Update;
-import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
-import com.pengrad.telegrambot.model.request.InlineKeyboardMarkup;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

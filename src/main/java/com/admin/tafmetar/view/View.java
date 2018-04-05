@@ -1,28 +1,24 @@
 package com.admin.tafmetar.view;
 
 import com.admin.tafmetar.controller.*;
-import com.admin.tafmetar.enumerate.TargetType;
 import com.admin.tafmetar.model.Model;
-import com.pengrad.telegrambot.Callback;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.model.request.ChatAction;
 import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
 import com.pengrad.telegrambot.model.request.InlineKeyboardMarkup;
-import com.pengrad.telegrambot.request.*;
-import com.pengrad.telegrambot.response.BaseResponse;
+import com.pengrad.telegrambot.request.GetUpdates;
+import com.pengrad.telegrambot.request.SendChatAction;
+import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
-import com.pengrad.telegrambot.response.SendResponse;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.IOException;
 import java.util.List;
 
 public class View implements Observer, Info {
 
     private TelegramBot bot = new TelegramBot(token);
-    private GetUpdatesResponse updatesResponse;
     private Integer offSet = 0;
 
     int queuesIndex = 0;
@@ -48,7 +44,7 @@ public class View implements Observer, Info {
     }
 
     public void processConversation() {
-
+        GetUpdatesResponse updatesResponse;
         updatesResponse = bot.execute(new GetUpdates().limit(100).offset(offSet));
         List<Update> updates = updatesResponse.updates();
 
