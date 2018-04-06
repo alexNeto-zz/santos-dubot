@@ -76,6 +76,8 @@ public class View implements Observer, Info {
                 bot.execute(new SendMessage(update.message().chat().id(), "Escolha uma das opções")
                         .replyMarkup(inlineKeyboard));
                 model.setLocale(update.message().text().toLowerCase());
+            } else {
+                bot.execute(new SendMessage(update.message().chat().id(), "Digite uma sigla ICAO"));
             }
         }
     }
