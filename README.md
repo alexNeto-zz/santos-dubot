@@ -19,19 +19,25 @@ O bot se destina a fazer consultas automatizadas no https://www.redemet.aer.mil.
 #### Primeira interação:
 
 >Primeira interação com o usuario;
-![description](Figures/inicio.jpg =250x250)
+
+<img src="Figures/inicio.jpg" width="200">
+
 
 #### Solicitando o Aviso de Aeródromo:
 >Usuario entrando com um código ICAO e solicitando o Aviso de Aeródromo;
-![description](Figures/aviso.jpg width=200)
+
+<img src="Figures/aviso.jpg" width="200">
+
 
 #### Solicitando o TAF:
 >Usuario entrando com um código ICAO e solicitando o TAF;
-![description](Figures/taf.jpg | width=200)
+
+<img src="Figures/taf.jpg" width="200">
 
 #### Solicitando o METAR:
 >Usuario entrando com um código ICAO e solicitando o METAR;
-![description](Figures/metar.jpg | width=200)
+
+<img src="Figures/metar.jpg" width="200">
 
 #### Solicitando o todos os dados:
 >Com o intuito de otimizar a interaçãodo bom com o usuario ele pode fazer o pedido de todas as informações de uma unica vez;
