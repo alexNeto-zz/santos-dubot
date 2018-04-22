@@ -19,11 +19,11 @@ O bot se destina a fazer consultas automatizadas no https://www.redemet.aer.mil.
 #### Primeira interação:
 
 >Primeira interação com o usuario;
-![description](Figures/inicio.jpg | width=200)
+![description](Figures/inicio.jpg =250x250)
 
 #### Solicitando o Aviso de Aeródromo:
 >Usuario entrando com um código ICAO e solicitando o Aviso de Aeródromo;
-![description](Figures/aviso.jpg | width=200)
+![description](Figures/aviso.jpg width=200)
 
 #### Solicitando o TAF:
 >Usuario entrando com um código ICAO e solicitando o TAF;
