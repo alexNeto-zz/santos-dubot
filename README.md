@@ -41,7 +41,8 @@ O bot se destina a fazer consultas automatizadas no https://www.redemet.aer.mil.
 
 #### Solicitando o todos os dados:
 >Com o intuito de otimizar a interaçãodo bom com o usuario ele pode fazer o pedido de todas as informações de uma unica vez;
-![description](Figures/todos.jpg | width=200)
+
+<img src="Figures/todos.jpg" width="200">
 
 
 # Diagrama de Classes do Sistema:
