@@ -5,6 +5,11 @@ public class Aerodromos {
     private String aerodromo;
     private Aerodromos dependencia;
 
+    public Aerodromos(String aerodromo, Aerodromos dependencia){
+        this.aerodromo = aerodromo;
+        this.dependencia = dependencia;
+    }
+    
     public String getAerodromo() {
         return aerodromo;
     }
