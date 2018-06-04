@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/alexNeto/santos-dubot.svg?branch=master)](https://travis-ci.org/alexNeto/santos-dubot)
 
 
+Projeto desenvolvido como trabalho para a cadeira de Engenharia de Software III da FATEC de São José dos Campos por @alexNeto, @guigaexe e @GrandeLepe
+
 # santos-dubot
 
 * baixe ou clone
