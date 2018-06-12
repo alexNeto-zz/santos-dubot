@@ -40,27 +40,28 @@ public class Model implements Subject {
     public void searchTaf(Update update) {
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.TAF);
-        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
+        String unformatedMessage = callTafMetarAerodromeService(targetTypeList);
+        sendResponse(update, replaceBrackets(unformatedMessage));
     }
 
     public void searchMetar(Update update) {
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.METAR);
-        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
+        String unformatedMessage = callTafMetarAerodromeService(targetTypeList);
+        sendResponse(update, replaceBrackets(unformatedMessage));
     }
 
     public void searchAerodrome(Update update) {
         List<TargetType> targetTypeList = new ArrayList<>();
         targetTypeList.add(TargetType.AERODROME);
-        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
+        String unformatedMessage = callTafMetarAerodromeService(targetTypeList);
+        sendResponse(update, replaceBrackets(unformatedMessage));
     }
 
     public void searchTafMetarAerodrome(Update update) {
-        List<TargetType> targetTypeList = new ArrayList<>();
-        targetTypeList.add(TargetType.AERODROME);
-        targetTypeList.add(TargetType.TAF);
-        targetTypeList.add(TargetType.METAR);
-        sendResponse(update, callTafMetarAerodromeService(targetTypeList));
+        this.searchTaf(update);
+        this.searchMetar(update);
+        this.searchAerodrome(update);
     }
 
     public String callTafMetarAerodromeService(List<TargetType> targetTypeList) {
@@ -81,8 +82,16 @@ public class Model implements Subject {
                 this.notifyObservers(update.callbackQuery().message().chat().id(), message);
             } else if (update.message() != null) {
                 this.notifyObservers(update.message().chat().id(), message);
+
             }
         }
+    }
+
+    public String replaceBrackets(String message) {
+        String formatedMessage;
+        formatedMessage = message.replace("[", "");
+        formatedMessage = formatedMessage.replace("]", "");
+        return formatedMessage;
     }
 
     public void setLocale(String locale) {

@@ -31,12 +31,12 @@ public class TafMetarAerodromeService {
         urlBuffer.append(protocol);
         urlBuffer.append(urlStem);
         if (this.locale == null || this.locale.isEmpty()) {
-            throw new BusinessException("O local está vazio"); // TODO - adicionar I18N
+            throw new BusinessException("O local está vazio");
         } else {
             urlBuffer.append(locale);
         }
         if (target == null) {
-            throw new BusinessException("O modo desejado deve ser informado"); // TODO - adicionar I18N
+            throw new BusinessException("O modo desejado deve ser informado");
         } else {
             if (target == TargetType.TAF) {
                 urlBuffer.append(urlTaf);
@@ -73,15 +73,15 @@ public class TafMetarAerodromeService {
             reader = new BufferedReader(new InputStreamReader(url.openStream()));
             partialResponse = reader.readLine();
         } catch (Exception e) {
-            throw new BusinessException("Não conseguimos acessar os dados desejados, tente novamente"); // TODO - adicionar I18N
+            throw new BusinessException("Não conseguimos acessar os dados desejados, tente novamente");
         } finally {
             try {
                 reader.close();
             } catch (Exception e) {
-                throw new BusinessException("Algo deu muito errado, tente de novo"); // TODO - adicionar I18N
+                throw new BusinessException("Algo deu muito errado, tente de novo");
             }
         }
-        return partialResponse; // TODO - implements
+        return partialResponse;
     }
 
     public void setTargetList(List<TargetType> targetList) {
