@@ -19,7 +19,7 @@ public class TafMetarAerodromeService {
         this.locale = locale;
     }
 
-    public String buildUrl(TargetType target) throws BusinessException {
+    public String buildUrl(TargetType target, String locale) throws BusinessException {
         String protocol = "http://";
         String urlStem = "www.redemet.aer.mil.br/api/consulta_automatica/index.php?local=";
         String urlTaf = "&msg=taf&data_ini=";
@@ -30,7 +30,7 @@ public class TafMetarAerodromeService {
         StringBuffer urlBuffer = new StringBuffer();
         urlBuffer.append(protocol);
         urlBuffer.append(urlStem);
-        if (this.locale == null || this.locale.isEmpty()) {
+        if (locale == null || locale.isEmpty()) {
             throw new BusinessException("O local está vazio");
         } else {
             urlBuffer.append(locale);
@@ -59,7 +59,7 @@ public class TafMetarAerodromeService {
         String url;
         List<String> response = new ArrayList<>();
         for (TargetType target : targetList) {
-            url = this.buildUrl(target);
+            url = this.buildUrl(target, locale);
             response.add(this.makeRequest(url));
         }
         return response;
