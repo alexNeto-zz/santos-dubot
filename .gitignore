@@ -112,3 +112,4 @@ local.properties
 ## project ignore
 
 Info.java
+Info.class
