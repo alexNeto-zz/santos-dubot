@@ -10,8 +10,8 @@ public class ConnectionFactory {
 
     public static ObjectContainer getConn() {
         if (conn == null) {
-            return conn =  Db4oEmbedded.openFile(Db4oEmbedded
-                    .newConfiguration(), "database.db");
+            return conn = Db4oEmbedded.openFile(Db4oEmbedded
+                    .newConfiguration(), "database.lag");
         } else {
             return conn;
         }

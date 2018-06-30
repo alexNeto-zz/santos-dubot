@@ -1,5 +1,7 @@
 package com.admin.tafmetar.model;
 
+import com.admin.tafmetar.bancodedados.Aerodromo;
+import com.admin.tafmetar.bancodedados.AerodromosDao;
 import com.admin.tafmetar.enumerate.TargetType;
 import com.admin.tafmetar.shared.BusinessException;
 import com.admin.tafmetar.utils.DateTimeUtils;
@@ -32,26 +34,27 @@ public class TafMetarAerodromeService {
         urlBuffer.append(urlStem);
         if (locale == null || locale.isEmpty()) {
             throw new BusinessException("O local está vazio");
-        } else {
-            urlBuffer.append(locale);
         }
         if (target == null) {
             throw new BusinessException("O modo desejado deve ser informado");
-        } else {
-            if (target == TargetType.TAF) {
-                urlBuffer.append(urlTaf);
-            }
-            if (target == TargetType.METAR) {
-                urlBuffer.append(urlMetar);
-            }
-            if (target == TargetType.AERODROME) {
-                urlBuffer.append(urlAerodromeInfo);
-            }
-            DateTimeUtils now = new DateTimeUtils();
-            urlBuffer.append(now.getFormatedDate());
-            urlBuffer.append(endDate);
-            urlBuffer.append(now.getFormatedDate());
         }
+        if (target == TargetType.TAF) {
+            urlBuffer.append(locale);
+            urlBuffer.append(urlTaf);
+        }
+        if (target == TargetType.METAR) {
+            urlBuffer.append(locale);
+            urlBuffer.append(urlMetar);
+        }
+        if (target == TargetType.AERODROME) {
+            urlBuffer.append(this.getAereodromeDependency(locale));
+            urlBuffer.append(urlAerodromeInfo);
+        }
+        DateTimeUtils now = new DateTimeUtils();
+        urlBuffer.append(now.getFormatedDate());
+        urlBuffer.append(endDate);
+        urlBuffer.append(now.getFormatedDate());
+
         return urlBuffer.toString();
     }
 
@@ -59,7 +62,7 @@ public class TafMetarAerodromeService {
         String url;
         List<String> response = new ArrayList<>();
         for (TargetType target : targetList) {
-            url = this.buildUrl(target, locale);
+            url = this.buildUrl(target, this.locale);
             response.add(this.makeRequest(url));
         }
         return response;
@@ -82,6 +85,15 @@ public class TafMetarAerodromeService {
             }
         }
         return partialResponse;
+    }
+
+    public String getAereodromeDependency(String locale) {
+        Aerodromo aerodromo = new AerodromosDao().selectAerodromo(new Aerodromo(this.locale, null));
+        String result = this.locale;
+        if (aerodromo.getDependencia().getAerodromo() != null) {
+            result = aerodromo.getDependencia().getAerodromo();
+        }
+        return result;
     }
 
     public void setTargetList(List<TargetType> targetList) {

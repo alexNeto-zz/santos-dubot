@@ -1,11 +1,11 @@
 package com.admin.tafmetar.bancodedados;
 
-public class Aerodromos {
+public class Aerodromo {
 
     private String aerodromo;
-    private Aerodromos dependencia;
+    private Aerodromo dependencia;
 
-    public Aerodromos(String aerodromo, Aerodromos dependencia){
+    public Aerodromo(String aerodromo, Aerodromo dependencia){
         this.aerodromo = aerodromo;
         this.dependencia = dependencia;
     }
@@ -18,11 +18,16 @@ public class Aerodromos {
         this.aerodromo = aerodromo;
     }
 
-    public Aerodromos getDependencia() {
+    public Aerodromo getDependencia() {
         return dependencia;
     }
 
-    public void setDependencia(Aerodromos dependencia) {
+    public void setDependencia(Aerodromo dependencia) {
         this.dependencia = dependencia;
+    }
+
+    @Override
+    public String toString(){
+        return "Aerodromo: " + this.aerodromo + "\tDependência: " + this.dependencia;
     }
 }

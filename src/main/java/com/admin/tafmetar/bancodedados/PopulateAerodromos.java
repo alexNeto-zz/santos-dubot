@@ -7,19 +7,9 @@ import java.util.List;
 public class PopulateAerodromos {
 
     public Boolean insertAll() {
-        Boolean result = true;
-        try {
-            makeInserts();
-        } catch (Exception e) {
-            result = false;
-        }
-        return result;
-    }
-
-    public void makeInserts() throws Exception {
-        ObjectContainer conn = ConnectionFactory.getConn();
-        List<Aerodromos> aerodromosLit = new InsertsAerodromo().getAerodromosList();
-        aerodromosLit.forEach(conn::store);
-        conn.close();
+        List<Aerodromo> aerodromoList = new InsertsAerodromo().getAerodromoList();
+        AerodromosDao aerodromosDao = new AerodromosDao();
+        aerodromoList.forEach(aerodromosDao::insertAerodromo);
+        return true;
     }
 }

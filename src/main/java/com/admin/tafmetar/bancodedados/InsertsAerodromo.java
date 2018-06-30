@@ -5,183 +5,182 @@ import java.util.List;
 
 public class InsertsAerodromo {
 
-    protected List<Aerodromos> aerodromosList = new ArrayList<>();
-
-    private Aerodromos sbrf = new Aerodromos("sbrf", null);
-    private Aerodromos sbeg = new Aerodromos("sbeg", null);
-    private Aerodromos sbee = new Aerodromos("sbee", null);
+    protected List<Aerodromo> aerodromoList = new ArrayList<>();
 
     public void insertSBBR() {
-        Aerodromos sbbr = new Aerodromos("sbbr", null);
-        aerodromosList.add(sbbr);
-        aerodromosList.add(new Aerodromos("sban", sbbr));
-        aerodromosList.add(new Aerodromos("sbbh", sbbr));
-        aerodromosList.add(new Aerodromos("sbbw", sbbr));
-        aerodromosList.add(new Aerodromos("sbcf", sbbr));
-        aerodromosList.add(new Aerodromos("sbcn", sbbr));
-        aerodromosList.add(new Aerodromos("sbgo", sbbr));
-        aerodromosList.add(new Aerodromos("sbip", sbbr));
-        aerodromosList.add(new Aerodromos("sbit", sbbr));
-        aerodromosList.add(new Aerodromos("sbls", sbbr));
-        aerodromosList.add(new Aerodromos("sbmk", sbbr));
-        aerodromosList.add(new Aerodromos("sbpj", sbbr));
-        aerodromosList.add(new Aerodromos("sbpr", sbbr));
+        Aerodromo sbbr = new Aerodromo("sbbr", null);
+        aerodromoList.add(sbbr);
+        aerodromoList.add(new Aerodromo("sban", sbbr));
+        aerodromoList.add(new Aerodromo("sbbh", sbbr));
+        aerodromoList.add(new Aerodromo("sbbw", sbbr));
+        aerodromoList.add(new Aerodromo("sbcf", sbbr));
+        aerodromoList.add(new Aerodromo("sbcn", sbbr));
+        aerodromoList.add(new Aerodromo("sbgo", sbbr));
+        aerodromoList.add(new Aerodromo("sbip", sbbr));
+        aerodromoList.add(new Aerodromo("sbit", sbbr));
+        aerodromoList.add(new Aerodromo("sbls", sbbr));
+        aerodromoList.add(new Aerodromo("sbmk", sbbr));
+        aerodromoList.add(new Aerodromo("sbpj", sbbr));
+        aerodromoList.add(new Aerodromo("sbpr", sbbr));
     }
 
     public void insertSBGR() {
-        Aerodromos sbgr = new Aerodromos("sbbr", null);
-        aerodromosList.add(sbgr);
-        aerodromosList.add(new Aerodromos("sbaq", sbgr));
-        aerodromosList.add(new Aerodromos("sbax", sbgr));
-        aerodromosList.add(new Aerodromos("sbbp", sbgr));
-        aerodromosList.add(new Aerodromos("sbgp", sbgr));
-        aerodromosList.add(new Aerodromos("sbjd", sbgr));
-        aerodromosList.add(new Aerodromos("sbkp", sbgr));
-        aerodromosList.add(new Aerodromos("sbmt", sbgr));
-        aerodromosList.add(new Aerodromos("sbpc", sbgr));
-        aerodromosList.add(new Aerodromos("sbrp", sbgr));
-        aerodromosList.add(new Aerodromos("sbsp", sbgr));
-        aerodromosList.add(new Aerodromos("sbsr", sbgr));
-        aerodromosList.add(new Aerodromos("sbul", sbgr));
-        aerodromosList.add(new Aerodromos("sbur", sbgr));
-        aerodromosList.add(new Aerodromos("sbvg", sbgr));
-        aerodromosList.add(new Aerodromos("sbys", sbgr));
+        Aerodromo sbgr = new Aerodromo("sbbr", null);
+        aerodromoList.add(sbgr);
+        aerodromoList.add(new Aerodromo("sbaq", sbgr));
+        aerodromoList.add(new Aerodromo("sbax", sbgr));
+        aerodromoList.add(new Aerodromo("sbbp", sbgr));
+        aerodromoList.add(new Aerodromo("sbgp", sbgr));
+        aerodromoList.add(new Aerodromo("sbjd", sbgr));
+        aerodromoList.add(new Aerodromo("sbkp", sbgr));
+        aerodromoList.add(new Aerodromo("sbmt", sbgr));
+        aerodromoList.add(new Aerodromo("sbpc", sbgr));
+        aerodromoList.add(new Aerodromo("sbrp", sbgr));
+        aerodromoList.add(new Aerodromo("sbsp", sbgr));
+        aerodromoList.add(new Aerodromo("sbsr", sbgr));
+        aerodromoList.add(new Aerodromo("sbul", sbgr));
+        aerodromoList.add(new Aerodromo("sbur", sbgr));
+        aerodromoList.add(new Aerodromo("sbvg", sbgr));
+        aerodromoList.add(new Aerodromo("sbys", sbgr));
     }
 
     public void insertSBGL() {
-        Aerodromos sbgl = new Aerodromos("sbgl", null);
-        aerodromosList.add(sbgl);
-        aerodromosList.add(new Aerodromos("sbaf", sbgl));
-        aerodromosList.add(new Aerodromos("sbbq", sbgl));
-        aerodromosList.add(new Aerodromos("sbcb", sbgl));
-        aerodromosList.add(new Aerodromos("sbcp", sbgl));
-        aerodromosList.add(new Aerodromos("sbec", sbgl));
-        aerodromosList.add(new Aerodromos("sbes", sbgl));
-        aerodromosList.add(new Aerodromos("sbfs", sbgl));
-        aerodromosList.add(new Aerodromos("sbgw", sbgl));
-        aerodromosList.add(new Aerodromos("sbjf", sbgl));
-        aerodromosList.add(new Aerodromos("sbjr", sbgl));
-        aerodromosList.add(new Aerodromos("sblb", sbgl));
-        aerodromosList.add(new Aerodromos("sbme", sbgl));
-        aerodromosList.add(new Aerodromos("sbmm", sbgl));
-        aerodromosList.add(new Aerodromos("sbrj", sbgl));
-        aerodromosList.add(new Aerodromos("sbsc", sbgl));
-        aerodromosList.add(new Aerodromos("sbsj", sbgl));
-        aerodromosList.add(new Aerodromos("sbst", sbgl));
-        aerodromosList.add(new Aerodromos("sbta", sbgl));
-        aerodromosList.add(new Aerodromos("sbzm", sbgl));
+        Aerodromo sbgl = new Aerodromo("sbgl", null);
+        aerodromoList.add(sbgl);
+        aerodromoList.add(new Aerodromo("sbaf", sbgl));
+        aerodromoList.add(new Aerodromo("sbbq", sbgl));
+        aerodromoList.add(new Aerodromo("sbcb", sbgl));
+        aerodromoList.add(new Aerodromo("sbcp", sbgl));
+        aerodromoList.add(new Aerodromo("sbec", sbgl));
+        aerodromoList.add(new Aerodromo("sbes", sbgl));
+        aerodromoList.add(new Aerodromo("sbfs", sbgl));
+        aerodromoList.add(new Aerodromo("sbgw", sbgl));
+        aerodromoList.add(new Aerodromo("sbjf", sbgl));
+        aerodromoList.add(new Aerodromo("sbjr", sbgl));
+        aerodromoList.add(new Aerodromo("sblb", sbgl));
+        aerodromoList.add(new Aerodromo("sbme", sbgl));
+        aerodromoList.add(new Aerodromo("sbmm", sbgl));
+        aerodromoList.add(new Aerodromo("sbrj", sbgl));
+        aerodromoList.add(new Aerodromo("sbsc", sbgl));
+        aerodromoList.add(new Aerodromo("sbsj", sbgl));
+        aerodromoList.add(new Aerodromo("sbst", sbgl));
+        aerodromoList.add(new Aerodromo("sbta", sbgl));
+        aerodromoList.add(new Aerodromo("sbzm", sbgl));
     }
 
     public void insertSBPA() {
-        Aerodromos sbpa = new Aerodromos("sbpa", null);
-        aerodromosList.add(sbpa);
-        aerodromosList.add(new Aerodromos("sbae", sbpa));
-        aerodromosList.add(new Aerodromos("sbau", sbpa));
-        aerodromosList.add(new Aerodromos("sbbg", sbpa));
-        aerodromosList.add(new Aerodromos("sbbi", sbpa));
-        aerodromosList.add(new Aerodromos("sbbu", sbpa));
-        aerodromosList.add(new Aerodromos("sbca", sbpa));
-        aerodromosList.add(new Aerodromos("sbcd", sbpa));
-        aerodromosList.add(new Aerodromos("sbcg", sbpa));
-        aerodromosList.add(new Aerodromos("sbch", sbpa));
-        aerodromosList.add(new Aerodromos("sbcm", sbpa));
-        aerodromosList.add(new Aerodromos("sbco", sbpa));
-        aerodromosList.add(new Aerodromos("sbcr", sbpa));
-        aerodromosList.add(new Aerodromos("sbct", sbpa));
-        aerodromosList.add(new Aerodromos("sbcx", sbpa));
-        aerodromosList.add(new Aerodromos("sbdb", sbpa));
-        aerodromosList.add(new Aerodromos("sbdn", sbpa));
-        aerodromosList.add(new Aerodromos("sbdo", sbpa));
-        aerodromosList.add(new Aerodromos("sbfi", sbpa));
-        aerodromosList.add(new Aerodromos("sbfl", sbpa));
-        aerodromosList.add(new Aerodromos("sbgu", sbpa));
-        aerodromosList.add(new Aerodromos("sbjv", sbpa));
-        aerodromosList.add(new Aerodromos("sblj", sbpa));
-        aerodromosList.add(new Aerodromos("sblo", sbpa));
-        aerodromosList.add(new Aerodromos("sbmg", sbpa));
-        aerodromosList.add(new Aerodromos("sbml", sbpa));
-        aerodromosList.add(new Aerodromos("sbnf", sbpa));
-        aerodromosList.add(new Aerodromos("sbnm", sbpa));
-        aerodromosList.add(new Aerodromos("sbpf", sbpa));
-        aerodromosList.add(new Aerodromos("sbpk", sbpa));
-        aerodromosList.add(new Aerodromos("sbpp", sbpa));
-        aerodromosList.add(new Aerodromos("sbsm", sbpa));
-        aerodromosList.add(new Aerodromos("sbtd", sbpa));
-        aerodromosList.add(new Aerodromos("sbtg", sbpa));
-        aerodromosList.add(new Aerodromos("sbug", sbpa));
+        Aerodromo sbpa = new Aerodromo("sbpa", null);
+        aerodromoList.add(sbpa);
+        aerodromoList.add(new Aerodromo("sbae", sbpa));
+        aerodromoList.add(new Aerodromo("sbau", sbpa));
+        aerodromoList.add(new Aerodromo("sbbg", sbpa));
+        aerodromoList.add(new Aerodromo("sbbi", sbpa));
+        aerodromoList.add(new Aerodromo("sbbu", sbpa));
+        aerodromoList.add(new Aerodromo("sbca", sbpa));
+        aerodromoList.add(new Aerodromo("sbcd", sbpa));
+        aerodromoList.add(new Aerodromo("sbcg", sbpa));
+        aerodromoList.add(new Aerodromo("sbch", sbpa));
+        aerodromoList.add(new Aerodromo("sbcm", sbpa));
+        aerodromoList.add(new Aerodromo("sbco", sbpa));
+        aerodromoList.add(new Aerodromo("sbcr", sbpa));
+        aerodromoList.add(new Aerodromo("sbct", sbpa));
+        aerodromoList.add(new Aerodromo("sbcx", sbpa));
+        aerodromoList.add(new Aerodromo("sbdb", sbpa));
+        aerodromoList.add(new Aerodromo("sbdn", sbpa));
+        aerodromoList.add(new Aerodromo("sbdo", sbpa));
+        aerodromoList.add(new Aerodromo("sbfi", sbpa));
+        aerodromoList.add(new Aerodromo("sbfl", sbpa));
+        aerodromoList.add(new Aerodromo("sbgu", sbpa));
+        aerodromoList.add(new Aerodromo("sbjv", sbpa));
+        aerodromoList.add(new Aerodromo("sblj", sbpa));
+        aerodromoList.add(new Aerodromo("sblo", sbpa));
+        aerodromoList.add(new Aerodromo("sbmg", sbpa));
+        aerodromoList.add(new Aerodromo("sbml", sbpa));
+        aerodromoList.add(new Aerodromo("sbnf", sbpa));
+        aerodromoList.add(new Aerodromo("sbnm", sbpa));
+        aerodromoList.add(new Aerodromo("sbpf", sbpa));
+        aerodromoList.add(new Aerodromo("sbpk", sbpa));
+        aerodromoList.add(new Aerodromo("sbpp", sbpa));
+        aerodromoList.add(new Aerodromo("sbsm", sbpa));
+        aerodromoList.add(new Aerodromo("sbtd", sbpa));
+        aerodromoList.add(new Aerodromo("sbtg", sbpa));
+        aerodromoList.add(new Aerodromo("sbug", sbpa));
     }
 
     public void insertSBRF() {
-        aerodromosList.add(this.sbrf);
-        aerodromosList.add(new Aerodromos("sbar", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbfe", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbfn", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbfz", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbgv", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbil", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbjp", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbju", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbkg", this.sbrf));
-        aerodromosList.add(new Aerodromos("sble", this.sbrf));
-        aerodromosList.add(new Aerodromos("sblp", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbmo", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbms", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbnt", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbpb", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbpl", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbps", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbqv", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbsg", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbsv", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbtc", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbte", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbtv", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbuf", this.sbrf));
-        aerodromosList.add(new Aerodromos("sbvt", this.sbrf));
+        Aerodromo sbrf = new Aerodromo("sbrf", null);
+        aerodromoList.add(sbrf);
+        aerodromoList.add(new Aerodromo("sbar", sbrf));
+        aerodromoList.add(new Aerodromo("sbfe", sbrf));
+        aerodromoList.add(new Aerodromo("sbfn", sbrf));
+        aerodromoList.add(new Aerodromo("sbfz", sbrf));
+        aerodromoList.add(new Aerodromo("sbgv", sbrf));
+        aerodromoList.add(new Aerodromo("sbil", sbrf));
+        aerodromoList.add(new Aerodromo("sbjp", sbrf));
+        aerodromoList.add(new Aerodromo("sbju", sbrf));
+        aerodromoList.add(new Aerodromo("sbkg", sbrf));
+        aerodromoList.add(new Aerodromo("sble", sbrf));
+        aerodromoList.add(new Aerodromo("sblp", sbrf));
+        aerodromoList.add(new Aerodromo("sbmo", sbrf));
+        aerodromoList.add(new Aerodromo("sbms", sbrf));
+        aerodromoList.add(new Aerodromo("sbnt", sbrf));
+        aerodromoList.add(new Aerodromo("sbpb", sbrf));
+        aerodromoList.add(new Aerodromo("sbpl", sbrf));
+        aerodromoList.add(new Aerodromo("sbps", sbrf));
+        aerodromoList.add(new Aerodromo("sbqv", sbrf));
+        aerodromoList.add(new Aerodromo("sbsg", sbrf));
+        aerodromoList.add(new Aerodromo("sbsv", sbrf));
+        aerodromoList.add(new Aerodromo("sbtc", sbrf));
+        aerodromoList.add(new Aerodromo("sbte", sbrf));
+        aerodromoList.add(new Aerodromo("sbtv", sbrf));
+        aerodromoList.add(new Aerodromo("sbuf", sbrf));
+        aerodromoList.add(new Aerodromo("sbvt", sbrf));
     }
 
     public void insertSBEG() {
-        aerodromosList.add(this.sbeg);
-        aerodromosList.add(new Aerodromos("sbat", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbbv", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbbc", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbcy", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbcz", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbek", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbgm", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbic", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbih", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbji", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbmn", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbmy", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbpv", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbrb", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbtf", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbtk", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbtt", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbua", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbuy", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbvh", this.sbeg));
-        aerodromosList.add(new Aerodromos("sbso", this.sbeg));
+        Aerodromo sbeg = new Aerodromo("sbeg", null);
+        aerodromoList.add(sbeg);
+        aerodromoList.add(new Aerodromo("sbat", sbeg));
+        aerodromoList.add(new Aerodromo("sbbv", sbeg));
+        aerodromoList.add(new Aerodromo("sbbc", sbeg));
+        aerodromoList.add(new Aerodromo("sbcy", sbeg));
+        aerodromoList.add(new Aerodromo("sbcz", sbeg));
+        aerodromoList.add(new Aerodromo("sbek", sbeg));
+        aerodromoList.add(new Aerodromo("sbgm", sbeg));
+        aerodromoList.add(new Aerodromo("sbic", sbeg));
+        aerodromoList.add(new Aerodromo("sbih", sbeg));
+        aerodromoList.add(new Aerodromo("sbji", sbeg));
+        aerodromoList.add(new Aerodromo("sbmn", sbeg));
+        aerodromoList.add(new Aerodromo("sbmy", sbeg));
+        aerodromoList.add(new Aerodromo("sbpv", sbeg));
+        aerodromoList.add(new Aerodromo("sbrb", sbeg));
+        aerodromoList.add(new Aerodromo("sbtf", sbeg));
+        aerodromoList.add(new Aerodromo("sbtk", sbeg));
+        aerodromoList.add(new Aerodromo("sbtt", sbeg));
+        aerodromoList.add(new Aerodromo("sbua", sbeg));
+        aerodromoList.add(new Aerodromo("sbuy", sbeg));
+        aerodromoList.add(new Aerodromo("sbvh", sbeg));
+        aerodromoList.add(new Aerodromo("sbso", sbeg));
     }
 
     public void insertSBEE() {
-        aerodromosList.add(this.sbee);
-        aerodromosList.add(new Aerodromos("sbaa", this.sbee));
-        aerodromosList.add(new Aerodromos("sboi", this.sbee));
-        aerodromosList.add(new Aerodromos("sbci", this.sbee));
-        aerodromosList.add(new Aerodromos("sbcj", this.sbee));
-        aerodromosList.add(new Aerodromos("sbht", this.sbee));
-        aerodromosList.add(new Aerodromos("sbiz", this.sbee));
-        aerodromosList.add(new Aerodromos("sbjc", this.sbee));
-        aerodromosList.add(new Aerodromos("sbma", this.sbee));
-        aerodromosList.add(new Aerodromos("sbmd", this.sbee));
-        aerodromosList.add(new Aerodromos("sbmq", this.sbee));
-        aerodromosList.add(new Aerodromos("sbsl", this.sbee));
-        aerodromosList.add(new Aerodromos("sbsn", this.sbee));
-        aerodromosList.add(new Aerodromos("sbfb", this.sbee));
-        aerodromosList.add(new Aerodromos("sbts", this.sbee));
-        aerodromosList.add(new Aerodromos("sbtu", this.sbee));
+        Aerodromo sbee = new Aerodromo("sbee", null);
+        aerodromoList.add(sbee);
+        aerodromoList.add(new Aerodromo("sbaa", sbee));
+        aerodromoList.add(new Aerodromo("sboi", sbee));
+        aerodromoList.add(new Aerodromo("sbci", sbee));
+        aerodromoList.add(new Aerodromo("sbcj", sbee));
+        aerodromoList.add(new Aerodromo("sbht", sbee));
+        aerodromoList.add(new Aerodromo("sbiz", sbee));
+        aerodromoList.add(new Aerodromo("sbjc", sbee));
+        aerodromoList.add(new Aerodromo("sbma", sbee));
+        aerodromoList.add(new Aerodromo("sbmd", sbee));
+        aerodromoList.add(new Aerodromo("sbmq", sbee));
+        aerodromoList.add(new Aerodromo("sbsl", sbee));
+        aerodromoList.add(new Aerodromo("sbsn", sbee));
+        aerodromoList.add(new Aerodromo("sbfb", sbee));
+        aerodromoList.add(new Aerodromo("sbts", sbee));
+        aerodromoList.add(new Aerodromo("sbtu", sbee));
     }
 
     public void makeList() {
@@ -194,9 +193,9 @@ public class InsertsAerodromo {
         this.insertSBEE();
     }
 
-    public List<Aerodromos> getAerodromosList() {
+    public List<Aerodromo> getAerodromoList() {
         makeList();
-        return aerodromosList;
+        return aerodromoList;
     }
 
 }
