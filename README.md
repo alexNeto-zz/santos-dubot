@@ -50,4 +50,4 @@ O bot se destina a fazer consultas automatizadas no https://www.redemet.aer.mil.
 
 # Diagrama de Classes do Sistema:
 
-![description](Figures/mvc.jpg)
+![description](Figures/mvc_v3.png)
